@@ -3,9 +3,15 @@
 
 ![Financial_Analysis.png](https://github.com/nielsdehaan1977/Fintech_Module4/blob/main/Images/Financial_Analysis.PNG)
 
-## Risk Return Analysis.ipynb
+## Financial Planning with APIs and Monte Carlo Simulations
 
-### This Jupyter notebook is a template on how to prepare market data, what metrics can be used to analyse, and how to visualize key risk and return metrics for a solid Risk Return Analysis. 
+## financial_planning_tools.ipynb
+---
+
+### This Jupyter notebook is a template for Financial Planning with APIs (Application Programming Interface) and uses Monte Carlo simulation to simulate the future performance of a portfolio and trying to analyze its most probable outcome. 
+The tool contains two financial analysis tools in one single jupyter notebook:
+1. A financial planner for emergencies. Members will be able to use this tool to visualize their current savingsand can then determine if they have enough reserves for an emergency fund.
+2. A financial planner for retirement. This tool will forecast the performance of their retirement portfolio in 30 years. To do this, the tool will make an Alpaca API call via the Alpaca SDK to get historical price data to use in Monte Carlo simulations.
 
 ---
 ## Table of Content
@@ -48,8 +54,10 @@ This project leverages python 3.9 and Jupyter Lab with the following packages:
 
 ### Before running the application first install the following dependencies in either Gitbash or Terminal. (If not already installed)
 
-#### Step1:    conda activate dev
-
+#### Step1: Activate dev environment in Gitbash or Terminal to do so type:
+```python
+    conda activate dev
+```
 #### Step2: install the following libraries by typing:
 ```python
     pip install pandas
@@ -61,7 +69,7 @@ This project leverages python 3.9 and Jupyter Lab with the following packages:
 
 #### Step3: Get the Alpaca API and Secret Keys
 
-You need to generate your API credentials from the Alpaca API. To create an account, enter an email address, create a 12-character password, and then click “Sign up for free.” You’ll receive an email to verify the address before you can continue. Once you verify your email address, the "Welcome to Alpaca” page displays. Click the “Go to Paper Account” link. 
+You need to generate API credentials from the Alpaca API. To create an account, enter an email address, create a 12-character password, and then click “Sign up for free.” You’ll receive an email to verify the address before you can continue. Once you verify your email address, the "Welcome to Alpaca” page displays. Click the “Go to Paper Account” link. 
 In the “Your API Keys” area, click the View button. Then click “Generate API Keys.” This generates two keys: the API Key ID and a secret key.
 You can put both keys in the SAMPLE.env file in the repository and change the name to .env (remove "Sample" from file name). Please note that the .env file needs to be in the same folder as the jupyter notebook file to work properly. 
 
@@ -69,6 +77,11 @@ You can put both keys in the SAMPLE.env file in the repository and change the na
 
 #### Step4: MCForecastTools.py file
 
+For the Monte Carlo simulation framework, please use the Python library named MCForecastTools. This library isn’t part of the Conda development environment, it exists as a Python file named MCForecastTools.py . This file contains all the logic, in the form of Python code, that you need to run the Monte Carlo simulation. Please note this file needs to be in the same folder as the Jupyter notebook that you’re working in. Then import MCForecastTools.py into the notebook to access it and therefore to run the simulations.
+
+Please find the code for MCForecastTools in below link:
+
+[MCForecastTools](https://cdn.inst-fs-pdx-prod.inscloudgate.net/e0e08ad7-c5b3-43c1-8e7c-e7efc5f1f39c/MCForecastTools.py?token=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCIsImtpZCI6ImNkbiJ9.eyJyZXNvdXJjZSI6Ii9lMGUwOGFkNy1jNWIzLTQzYzEtOGU3Yy1lN2VmYzVmMWYzOWMvTUNGb3JlY2FzdFRvb2xzLnB5IiwidGVuYW50IjoiY2FudmFzIiwidXNlcl9pZCI6IjE1MDQyMDAwMDAwMDA0MTkyOCIsImlhdCI6MTY3MjMwNDM5NywiZXhwIjoxNjcyMzkwNzk3fQ.WGJMX_rASeilWSbulLAihV6NgGxdQXfVJnemxa9Pdyydjy0LvqbqBUcMU_ORuels5eLcI8CUQ7bzjZMIcmOi3A&content_type=text%2Fx-python)
 
 #### Step5: Start Jupyter Lab
 Jupyter Lab can be started by:
@@ -80,17 +93,21 @@ Jupyter Lab can be started by:
 
 ## Usage
 
-To use the Risk Return Analysis jupyter lab notebook simply clone the full repository including resources folder and open the **risk_return_analysis.ipynb.ipynb** file in Jupyter Lab. 
+To use the financial planning tools jupyter lab notebook, simply clone the full repository and open the **financial_planning_tools.ipynb** file in Jupyter Lab. 
 
-Upon launching risk_return_analysis.ipynb notebook, you will go through all the steps to analyse:
+**Upon running the tool please make sure MCForecastTools.py and the .env file with the Apalca API keys is in the same folder, otherwise the tool will not work properly.** 
 
-1. Import Data - Import required data and import required libraries.
-2. Analyze performance - Analyze the data to determine if any of the portfolios outperform the broader stock market.
-3. Analyze volatility - Analyze the volatility of each portfolios/stock and of the bench mark index by using box plots.
-4. Analyze risk - Evaluate the risk profile of each portfolio/stock by using the standard deviation and the beta.
-5. Analyze risk return profile - Determine the overall risk return of an asset or portfolio by considering the Sharpe ratios for each portfolio/stock. 
-6. Diversify portfolio - Evaluate how the portfolios/stocks react relative to the broader market and conclude which one(s) can be used to diversify existing portfolio.
+The tool will go through all the steps of financial planning:
 
+### Create a Financial Planner for Emergencies
+1. Evaluate a cryptocurrency wallet by using the requests library
+2. Evaluate a stock and bonds portfolio by using the Alpaca SDK
+3. Evaluate the Emergency Fund
+
+### Create a Financial Planner for Retirement
+1. Create a Monte Carlo simulation
+2. Analyze retirement portfolio forecasts
+3. Forecast cumulative returns in 10 Years
 
 ## Contributor(s)
 
