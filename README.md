@@ -65,7 +65,7 @@ You need to generate your API credentials from the Alpaca API. To create an acco
 In the “Your API Keys” area, click the View button. Then click “Generate API Keys.” This generates two keys: the API Key ID and a secret key.
 You can put both keys in the SAMPLE.env file in the repository and change the name to .env (remove "Sample" from file name). Please note that the .env file needs to be in the same folder as the jupyter notebook file to work properly. 
 
-![Alpaca](https://github.com/nielsdehaan1977/Fintech_Module5/blob/main/Images/Alpaca.png)
+![Alpaca](https://github.com/nielsdehaan1977/Fintech_Module5/blob/main/Images/Alpaca.PNG)
 
 #### Step4: MCForecastTools.py file
 
